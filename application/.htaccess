@@ -1,0 +1,10 @@
+Options -Indexes
+# Activate url rewriting module.
+RewriteEngine on
+RewriteCond $1 !^(index\.php|assets/|robots\.txt)
+RewriteCond $1 !^(index\.php|assets|images|js|css|uploads|favicon.png)
+RewriteCond $(REQUEST_FILENAME) !-f
+RewriteCond $(REQUEST_FILENAME) !-d
+RewriteRule ^(.*)$ ./index.php/$1 [L]
+RewriteRule ^(.*)$ ./index.html/$1 [L]
+RewriteRule ^(.*)$ ./login.html/$1 [L]
